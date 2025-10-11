@@ -9,4 +9,17 @@ def main():
     print(f"The smallest number is {min(numbers)}")
     print(f"The lagest number is {max(numbers)}")
     print(f"The average of the numbers is {sum(numbers) / len(numbers)}")
-    
+
+#   Part 2
+#    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer', 'bob']
+    usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface',
+                 'BaseStdIn', 'Command', 'ExecState', 'InteractiveConsole', 'InterpreterInterface', 'StartServer',
+                 'bob']
+
+    username = input("Enter your username: ")
+    if username in usernames:
+        print("Access granted")
+    else:
+        print("Access denied.")
+
+main()
