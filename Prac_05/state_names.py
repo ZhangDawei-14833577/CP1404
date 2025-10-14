@@ -16,13 +16,17 @@ CODE_TO_NAME = {
     "SA": "South Australia"
 }
 
+# Print state name
 for code, name in CODE_TO_NAME.items():
     print(f"{code:3} is {name}")
 
+# Ask the user for a state abbreviation until they enter a blank line
 state_code = input("Enter short state: ").upper()
+
+# Keep looping until the user presses Enter
 while state_code != "":
-    if state_code in CODE_TO_NAME:
-        print(state_code, "is", CODE_TO_NAME[state_code])
-    else:
+    try:
+        print(f"{state_code} is {CODE_TO_NAME[state_code]}")
+    except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
