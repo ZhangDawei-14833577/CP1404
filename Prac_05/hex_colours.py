@@ -15,3 +15,11 @@ COLOUR_CODES = {
 
 # Prompt for input
 colour_name = input("Enter a colour name: ").lower()
+
+# Loop input until a blank line
+while colour_name != "":
+    try:
+        print(f"The code for {colour_name} is {COLOUR_CODES[colour_name]}")
+    except KeyError:
+        print("Invalid colour name")
+    colour_name = input("Enter a colour name: ").lower()
