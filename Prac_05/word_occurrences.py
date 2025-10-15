@@ -15,3 +15,14 @@ for word in words:
     else:
         word_to_count[word] = 1
 
+# Sort the words alphabetically
+sorted_words = sorted(word_to_count.keys())
+
+# Find the longest length(for alignment)
+max_length = max(len(word) for word in sorted_words)
+
+# Print the results nearly aligned
+for word in sorted_words:
+    print(f"{word:{max_length}} : {word_to_count[word]}")
+
+
