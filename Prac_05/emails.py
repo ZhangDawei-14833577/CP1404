@@ -8,3 +8,16 @@ def extract_name_from_email(email):
     return parts
 
 def main():
+    """Store emails and names in a dictionary."""
+    email_to_name = {}
+    email = input("Emails: ")
+    while email != "":
+        # Automatically extract names based on email
+        name = extract_name_from_email(email)
+        # Ask the user if it is correct
+        confirmation = input(f"Is your name {name}? (Y/n)").lower()
+        if confirmation not in ("", "y", "yes"):
+            name = input("Name: ")
+        # Store names in a dictionary
+        email_to_name[email] = name
+        email = input("Email: ")
