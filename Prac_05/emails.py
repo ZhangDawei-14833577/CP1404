@@ -21,3 +21,10 @@ def main():
         # Store names in a dictionary
         email_to_name[email] = name
         email = input("Email: ")
+
+    # Print result
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
+
+if __name__ == "__main__":
+    main()
