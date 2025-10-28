@@ -2,7 +2,7 @@
 Client code to use ProgrammingLanguage
 
 Estimate: 25 minutes
-Actual:  minutes
+Actual:  30 minutes
 """
 from programming_language import ProgrammingLanguage
 

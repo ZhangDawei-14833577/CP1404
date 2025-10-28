@@ -2,7 +2,7 @@
 Programming Language class
 
 Estimate: 20 minutes
-Actual:    minutes
+Actual: 30 minutes
 """
 
 class ProgrammingLanguage:
