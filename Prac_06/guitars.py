@@ -1,0 +1,30 @@
+"""
+Client program to store and display user's guitars
+Estimate: ? minutes
+Actual:   ? minutes
+"""
+
+from guitar import Guitar
+
+
+def main():
+    print("My guitars!")
+
+    guitars = []
+    name = input("Name: ")
+    while name != "":
+        year = int(input("Year: "))
+        cost = float(input("Cost: "))
+
+        new_guitar = Guitar(name, year, cost)
+        guitars.append(new_guitar)
+        print(f"{new_guitar} added.")
+
+        name = input("Name: ")
+
+
+
+    print("\nThese are my guitars:")
+
+
+main()
