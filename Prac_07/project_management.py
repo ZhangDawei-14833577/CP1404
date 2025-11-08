@@ -84,21 +84,6 @@ def update_project(projects: List[Project]) -> None:
     new_pri = input("New Priority: ").strip()
     if new_pri != "":
         proj.priority = int(new_pri)
-def update_project(projects: List[Project]) -> None:
-    list_projects_indexed(projects)
-    try:
-        idx = int(input("Project choice: ").strip())
-        proj = projects[idx]
-    except (ValueError, IndexError):
-        print("Invalid choice.")
-        return
-    print(proj)
-    new_pct = input("New Percentage: ").strip()
-    if new_pct != "":
-        proj.completion = int(new_pct)
-    new_pri = input("New Priority: ").strip()
-    if new_pri != "":
-        proj.priority = int(new_pri)
 
 def save_projects(filename: str, projects: List[Project]) -> None:
     with open(filename, "w", encoding="utf-8") as f:
