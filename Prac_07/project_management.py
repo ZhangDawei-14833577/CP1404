@@ -54,6 +54,17 @@ def filter_projects_by_date(projects: List[Project]) -> None:
     for p in filtered:
         print(p)
 
+def add_new_project(projects: List[Project]) -> None:
+    print("Let's add a new project")
+    name = input("Name: ").strip()
+    start_str = input("Start date (dd/mm/yyyy): ").strip()
+    priority = int(input("Priority: ").strip())
+    estimate = float(input("Cost estimate: $").strip().replace("$", ""))
+    completion = int(input("Percent complete: ").strip())
+    new_proj = Project(name, parse_date(start_str), priority, estimate, completion)
+    projects.append(new_proj)
+    print("Added:", new_proj)
+
 def main() -> None:
     print("Welcome to Pythonic Project Management")
     try:
