@@ -65,6 +65,41 @@ def add_new_project(projects: List[Project]) -> None:
     projects.append(new_proj)
     print("Added:", new_proj)
 
+def list_projects_indexed(projects: List[Project]) -> None:
+    for i, p in enumerate(projects):
+        print(f"{i} {p}")
+
+def update_project(projects: List[Project]) -> None:
+    list_projects_indexed(projects)
+    try:
+        idx = int(input("Project choice: ").strip())
+        proj = projects[idx]
+    except (ValueError, IndexError):
+        print("Invalid choice.")
+        return
+    print(proj)
+    new_pct = input("New Percentage: ").strip()
+    if new_pct != "":
+        proj.completion = int(new_pct)
+    new_pri = input("New Priority: ").strip()
+    if new_pri != "":
+        proj.priority = int(new_pri)
+def update_project(projects: List[Project]) -> None:
+    list_projects_indexed(projects)
+    try:
+        idx = int(input("Project choice: ").strip())
+        proj = projects[idx]
+    except (ValueError, IndexError):
+        print("Invalid choice.")
+        return
+    print(proj)
+    new_pct = input("New Percentage: ").strip()
+    if new_pct != "":
+        proj.completion = int(new_pct)
+    new_pri = input("New Priority: ").strip()
+    if new_pri != "":
+        proj.priority = int(new_pri)
+
 def main() -> None:
     print("Welcome to Pythonic Project Management")
     try:
