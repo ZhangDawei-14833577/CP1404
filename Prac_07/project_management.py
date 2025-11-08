@@ -100,6 +100,13 @@ def update_project(projects: List[Project]) -> None:
     if new_pri != "":
         proj.priority = int(new_pri)
 
+def save_projects(filename: str, projects: List[Project]) -> None:
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for p in projects:
+            f.write(p.to_tsv_row() + "\n")
+    print(f"Saved {len(projects)} projects to {filename}")
+
 def main() -> None:
     print("Welcome to Pythonic Project Management")
     try:
@@ -136,6 +143,12 @@ def main() -> None:
         elif choice == "u":
             update_project(projects)
         elif choice == "q":
+            ans = input(f"Save to {DEFAULT_FILENAME}? (y/N): ").strip().lower()
+            if ans == "y":
+                try:
+                    save_projects(DEFAULT_FILENAME, projects)
+                except Exception as e:
+                    print("Save failed:", e)
             break
         else:
             print("Invalid choice")
