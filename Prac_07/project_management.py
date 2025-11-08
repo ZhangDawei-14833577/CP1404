@@ -19,22 +19,28 @@ def parse_date(d: str) -> date:
 def load_projects(filename: str) -> List[Project]:
     projects: List[Project] = []
     with open(filename, "r", encoding="utf-8") as f:
-        header = f.readline()  # 丢弃表头
+        header = f.readline()
         for line in f:
             line = line.strip()
             if not line:
                 continue
             name, start_str, priority, estimate, completion = line.split("\t")
             projects.append(
-                Project(
-                    name=name,
-                    start_date=parse_date(start_str),
-                    priority=int(priority),
-                    estimate=float(estimate),
-                    completion=int(completion),
-                )
+                Project(name, parse_date(start_str), int(priority), float(estimate), int(completion))
             )
     return projects
+
+def display_projects(projects: List[Project]) -> None:
+    incomplete = [p for p in projects if not p.is_complete()]
+    complete = [p for p in projects if p.is_complete()]
+    incomplete.sort()  # 按 priority
+    complete.sort()
+    print("Incomplete projects:")
+    for p in incomplete:
+        print(f"  {p}")
+    print("Completed projects:")
+    for p in complete:
+        print(f"  {p}")
 
 
 def main() -> None:
@@ -48,6 +54,11 @@ def main() -> None:
 
     MENU = (
         "- (L)oad projects\n"
+        "- (S)ave projects\n"      
+        "- (D)isplay projects\n"
+        "- (F)ilter projects by date\n"  
+        "- (A)dd new project\n"    
+        "- (U)pdate project\n"
         "- (Q)uit\n"
     )
     while True:
