@@ -42,6 +42,17 @@ def display_projects(projects: List[Project]) -> None:
     for p in complete:
         print(f"  {p}")
 
+def filter_projects_by_date(projects: List[Project]) -> None:
+    date_str = input("Show projects that start after date (dd/mm/yyyy): ").strip()
+    try:
+        cutoff = parse_date(date_str)
+    except ValueError:
+        print("Invalid date format.")
+        return
+    filtered = [p for p in projects if p.starts_after(cutoff)]
+    filtered.sort(key=lambda p: p.start_date)
+    for p in filtered:
+        print(p)
 
 def main() -> None:
     print("Welcome to Pythonic Project Management")
@@ -67,7 +78,17 @@ def main() -> None:
         if choice == "l":
             filename = input("File to load: ").strip() or DEFAULT_FILENAME
             projects = load_projects(filename)
-            print(f"Loaded {len(projects)} projects from {filename}")
+        elif choice == "s":
+            filename = input("File to save to: ").strip() or DEFAULT_FILENAME
+            save_projects(filename, projects)
+        elif choice == "d":
+            display_projects(projects)
+        elif choice == "f":
+            filter_projects_by_date(projects)
+        elif choice == "a":
+            add_new_project(projects)
+        elif choice == "u":
+            update_project(projects)
         elif choice == "q":
             break
         else:
