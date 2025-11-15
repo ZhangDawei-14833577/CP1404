@@ -9,6 +9,7 @@ class BoxLayoutDemo(App):
         return self.root
 
     def handle_greet(self):
-        self.root.ids.output_label.text = "Hello "
+        name = self.root.ids.input_name.text.strip()
+        self.root.ids.output_label.text = f"Hello {name}" if name else "Hello"
 
 BoxLayoutDemo().run()
