@@ -12,4 +12,7 @@ class BoxLayoutDemo(App):
         name = self.root.ids.input_name.text.strip()
         self.root.ids.output_label.text = f"Hello {name}" if name else "Hello"
 
+    def handle_clear(self):
+        self.root.ids.input_name.text = ""
+        self.root.ids.output_label.text = ""
 BoxLayoutDemo().run()
