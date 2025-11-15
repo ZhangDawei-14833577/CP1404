@@ -1,5 +1,7 @@
 BoxLayout:
     orientation: 'vertical'
+    BoxLayout:
+        orientation: 'horizontal'
     TextInput:
         id: input_number
         text: '7'
@@ -13,3 +15,7 @@ BoxLayout:
         id: output_label
         font_size: 48
         color: (1, 0.4, 0.7, 1)
+
+    BoxLayout:
+        size_hint_y: None
+        height: '0dp'
