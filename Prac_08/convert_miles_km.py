@@ -6,6 +6,7 @@ Lindsay Ward, IT@JCU
 
 from kivy.app import App
 from kivy.lang import Builder
+from kivy.properties import StringProperty
 
 __author__ = 'Lindsay Ward'
 
@@ -24,7 +25,7 @@ class MilesConverterApp(App):
         """ handle calculation (could be button press or other call), output result to label widget """
         value = self.get_validated_miles()
         result = value * MILES_TO_KM
-        self.root.ids.output_label.text = str(result)
+        self.km_text = str(result)
 
     def handle_increment(self, change):
         """
