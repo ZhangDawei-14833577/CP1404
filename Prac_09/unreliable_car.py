@@ -18,6 +18,9 @@ class UnreliableCar(Car):
         Drive only if a random number (0-100) is less than reliability.
         Return the distance actually driven (0 or the normal Car.drive result).
         """
-
+        random_number = randint(0, 100)
+        if random_number < self.reliability:
+            distance_driven = super().drive(distance)
+            return distance_driven
         return 0.0
 
