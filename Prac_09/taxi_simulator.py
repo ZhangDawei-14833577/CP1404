@@ -23,6 +23,21 @@ def choose_taxi(taxis):
         print("Invalid taxi choice")
         return None
 
+def drive_taxi(current_taxi, bill_to_date):
+    """Drive the current taxi for a given distance and update bill."""
+    try:
+        distance = float(input("Drive how far? "))
+    except ValueError:
+        print("Invalid distance")
+        return bill_to_date
+
+    current_taxi.start_fare()
+    current_taxi.drive(distance)
+    trip_cost = current_taxi.get_fare()
+    print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+    bill_to_date += trip_cost
+    return bill_to_date
+
 
 def main():
     """Taxi simulator program."""
@@ -44,6 +59,11 @@ def main():
             chosen_taxi = choose_taxi(taxis)
             if chosen_taxi is not None:
                 current_taxi = chosen_taxi
+        elif choice == "d":
+            if current_taxi is None:
+                print("You need to choose a taxi before you can drive")
+            else:
+                bill_to_date = drive_taxi(current_taxi, bill_to_date)
         else:
             print("Invalid option")
 
