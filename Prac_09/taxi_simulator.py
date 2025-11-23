@@ -6,6 +6,12 @@ from silver_service_taxi import SilverServiceTaxi
 
 MENU = "q)uit, c)hoose taxi, d)rive"
 
+def display_taxis(taxis):
+    """Display all taxis with index."""
+    print("Taxis available: ")
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
+
 
 def main():
     """Taxi simulator program."""
