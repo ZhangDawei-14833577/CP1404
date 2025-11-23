@@ -1,6 +1,6 @@
 """Test the Taxi class."""
 
-from prac_09.taxi import Taxi
+from taxi import Taxi
 
 
 def main():
