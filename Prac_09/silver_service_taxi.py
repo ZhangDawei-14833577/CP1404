@@ -13,6 +13,10 @@ class SilverServiceTaxi(Taxi):
         fare = super().get_fare() + self.flagfall
         return fare
 
+    def __str__(self):
+        """Return string representation including flagfall."""
+        return f"{super().__str__()} plus flagfall of ${self.flagfall:.2f}"
+
     def __init__(self, name, fuel, fanciness):
         """Initialise a SilverServiceTaxi with name, fuel, and fanciness."""
         super().__init__(name, fuel)
