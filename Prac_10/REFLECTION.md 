@@ -1,60 +1,43 @@
 # CP1404 Practical Reflection
 
 Write short but thoughtful answers to each of the following.
-Replace each `...` with your meaningful answer.
 
 ## Estimates
 
-Regarding the **estimates** that you did for practical tasks...
-
 ### How was your estimate accuracy usually?
 
-...
+My estimates were not very accurate at the start. I normally underestimated how long tasks would take.
 
 ### How did your estimate accuracy improve or change during the course of the subject?
 
-...
+As the weeks went on, my estimates became more realistic. I learned to consider debugging and testing time, not only writing code time.
 
 ### What did you learn from doing these estimates?
 
-...
+I learned how to plan my time better and break tasks into smaller parts. Estimating helped me understand my own working speed and improved my time-management.
 
 ## Code Reviews
 
 ### What have you learned from being reviewed by other people?
 
-...
+I learned to write cleaner and more readable code because others would see it. I also learned common mistakes from their comments.
 
 ### What have you learned from doing code reviews of other people?
 
-...
+Reviewing others’ code helped me spot issues more quickly and taught me new ways of solving problems.
 
-Provide proper Markdown links (not bare URLs) to two (2) PRs that show you doing good code reviews for any of the past
-pracs.
-For each one, write a short explanation of what was good about your review.
-
-### Good Code Review 1
-
-[]()
+Provide proper Markdown links to two PRs for past pracs.
 
 ### Explanation
 
-...
-
-### Good Code Review 2
-
-[]()
-
-### Explanation
-
-...
+I explained why naming conventions are important and suggested clearer variable names.
 
 ## Practicals
 
-### Regarding the **practical tasks** overall, what would you change if you were in charge of the subject?
+### Regarding the practical tasks overall, what would you change if you were in charge of the subject?
 
-...
+I would add more short videos explaining the harder pracs, especially GUI and Flask.
 
 ### What did you do really well for practicals in this subject?
 
-...
+I stayed consistent every week, improved my debugging skills, and wrote cleaner code as the subject progressed.
