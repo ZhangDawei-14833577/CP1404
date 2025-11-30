@@ -55,10 +55,13 @@ def format_as_sentence(phrase):
     >>> format_as_sentence("hI THERE?")
     'Hi there.'
     """
-    phrase = phrase.strip().capitalize()
-    if not phrase.endswith('.'):
-        phrase += '.'
-    return phrase
+    phrase = phrase.strip()
+    if not phrase:
+        return ""
+    phrase = phrase.capitalize()
+    if phrase[-1] in ".!?":
+        phrase = phrase[:-1]
+    return phrase + "."
 
 
 run_tests()
